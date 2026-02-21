@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crear Auto</title>
+</head>
+<body>
+
+<h2>Crear Auto de Prueba</h2>
+
+<button onclick="crearAuto()">Crear BMW de prueba</button>
+
+<script>
+function crearAuto() {
+  fetch("https://autos-backend-8wzv.onrender.com/autos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      marca: "BMW",
+      modelo: "320i",
+      año: 2020,
+      precio: 25000,
+      imagen: "imagenes/bmw320.jpg"
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    alert("Auto creado correctamente 🚗");
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error al crear auto");
+  });
+}
+</script>
+
+</body>
+</html>
