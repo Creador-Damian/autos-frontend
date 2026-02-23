@@ -403,3 +403,29 @@ footer {
 .btn-crear:hover {
   background-color: #f5c842;
 }
+.vehiculos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto 20px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.vehiculos-header h2 {
+  color: #d4af37;
+}
+
+.btn-crear {
+  background-color: #d4af37;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-crear:hover {
+  background-color: #f5c842;
+}

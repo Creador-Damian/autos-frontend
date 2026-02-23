@@ -5,42 +5,47 @@
     <title>Gastón Automotores</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
-    <header>
+<header>
     <img src="imagenes/logo.jpeg" alt="Logo de la empresa" class="logo">
     <h1>Gastón Automotores</h1>
     <p>La fábrica de la felicidad</p>
 </header>
+
 <section class="showroom">
     <div class="overlay">
         <h2>Catálogo</h2>
-        <p>Descubrí nuestra selección exclusiva de vehículos </p>
+        <p>Descubrí nuestra selección exclusiva de vehículos</p>
         <a href="#vehiculos" class="btn-showroom">Ver Vehículos</a>
     </div>
-    <a href="crear.html" class="btn-crear">+ Agregar Vehículo</a>
 </section>
-<p class="confianza">✔ Transparencia en cada operación | ✔ Atención personalizada | ✔ Seguridad garantizada</p>
+
+<p class="confianza">
+    ✔ Transparencia en cada operación | ✔ Atención personalizada | ✔ Seguridad garantizada
+</p>
 
 <section class="nosotros">
     <h2>Sobre Nosotros</h2>
     <p>
         En <strong>Gastón Automotores</strong> trabajamos con compromiso,
-        transparencia y atención personalizada. 
-        Nuestro objetivo es ayudarte a encontrar el vehículo ideal 
+        transparencia y atención personalizada.
+        Nuestro objetivo es ayudarte a encontrar el vehículo ideal
         con confianza y seguridad.
     </p>
     <p>
-        Nos encontramos en Corrientes, ofreciendo vehículos seleccionados 
+        Nos encontramos en Corrientes, ofreciendo vehículos seleccionados
         y asesoramiento profesional en cada operación.
     </p>
 </section>
+
 <section class="local">
     <h2>Nuestro Local</h2>
     <img src="imagenes/local.png" alt="Frente de Gastón Automotores">
 </section>
+
 <section class="elegirnos">
     <h2>¿Por qué elegirnos?</h2>
 
@@ -61,9 +66,11 @@
         </div>
     </div>
 </section>
+
 <div class="buscador">
     <input type="text" id="buscadorInput" placeholder="Buscar por marca, modelo o año...">
 </div>
+
 <section class="filtros">
     <button onclick="filtrarAutos('todos')">Todos</button>
     <button onclick="filtrarAutos('toyota')">Toyota</button>
@@ -73,14 +80,17 @@
     <button onclick="filtrarAutos('Citroen')">Citroen</button>
 </section>
 
+<!-- HEADER DEL CATÁLOGO -->
+<div class="vehiculos-header">
+    <h2>Vehículos Disponibles</h2>
+    <a href="crear.html" class="btn-crear">+ Agregar Vehículo</a>
+</div>
 
-    <section id="vehiculos" class="autos">
-    </section>
-
+<section id="vehiculos" class="autos">
+</section>
 
 <div class="paginacion" id="paginacion"></div>
 
-    </section>
 <section class="contacto">
     <h2>Contacto</h2>
 
@@ -88,7 +98,7 @@
 
         <div class="info-contacto">
             <p>📧 <strong>E-mail:</strong> gastonautomotores@hotmail.com</p>
-            <p>📱 <strong>WhatsApp:</strong> 
+            <p>📱 <strong>WhatsApp:</strong>
                 <a href="https://wa.me/543794650091" target="_blank">
                     379 465 0091
                 </a>
@@ -112,13 +122,12 @@
 
         <div class="formulario">
             <h3>Envíanos un mensaje</h3>
-          <form id="form-contacto">
-    <input type="text" id="nombre" placeholder="Nombre" required>
-    <input type="email" id="email" placeholder="Correo electrónico" required>
-    <textarea id="mensaje" placeholder="Tu mensaje..." rows="4" required></textarea>
-    <button type="submit">Enviar Mensaje</button>
-</form>
-
+            <form id="form-contacto">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <textarea id="mensaje" placeholder="Tu mensaje..." rows="4" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
         </div>
 
     </div>
@@ -129,11 +138,10 @@
 </footer>
 
 <script src="script.js"></script>
+
 <a href="https://wa.me/543794650091" class="whatsapp-float" target="_blank">
     💬
 </a>
 
 </body>
 </html>
-<!-- actualización forzada -->
- 
