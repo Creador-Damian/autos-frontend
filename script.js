@@ -1,22 +1,34 @@
 fetch("https://autos-backendss.onrender.com/autos")
-    .then(response => response.json())
-    .then(data => {
-        const contenedor = document.getElementById("vehiculos");
+  .then(response => response.json())
+  .then(data => {
+    const contenedor = document.getElementById("vehiculos");
 
-        data.forEach(auto => {
-            const autoHTML = `
-  <div class="auto">
-    <h2>${auto.marca} ${auto.modelo}</h2>
-    <p>Año: ${auto.año}</p>
-    <p>Precio: $${auto.precio}</p>
+    contenedor.innerHTML = "";
 
-    <button onclick="editarAuto('${auto._id}')">Editar</button>
-    <button onclick="eliminarAuto('${auto._id}')">Eliminar</button>
-  </div>
-  
-`;
+    data.forEach(auto => {
+      const autoHTML = `
+        <div class="auto">
+          <h2>${auto.marca} ${auto.modelo}</h2>
+          <p>Año: ${auto.año}</p>
+          <p>Precio: $${auto.precio}</p>
+
+          <button onclick="editarAuto('${auto._id}')">Editar</button>
+          <button onclick="eliminarAuto('${auto._id}')">Eliminar</button>
+        </div>
+      `;
+
+      contenedor.innerHTML += autoHTML;
+    });
+  })
+  .catch(error => console.error("Error:", error));
+
+
+// 🔹 FUNCIONES FUERA DEL forEach 🔹
+
 function editarAuto(id) {
   const nuevoPrecio = prompt("Ingrese nuevo precio:");
+
+  if (!nuevoPrecio) return;
 
   fetch(`https://autos-backendss.onrender.com/autos/${id}`, {
     method: "PUT",
@@ -28,14 +40,22 @@ function editarAuto(id) {
     })
   })
   .then(res => res.json())
-  .then(data => {
+  .then(() => {
     alert("Auto actualizado 🚗");
     location.reload();
   })
   .catch(err => console.error(err));
 }
 
-            contenedor.innerHTML += autoHTML;
-        });
-    })
-    .catch(error => console.error("Error:", error));
+
+function eliminarAuto(id) {
+  fetch(`https://autos-backendss.onrender.com/autos/${id}`, {
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Auto eliminado 🚗");
+    location.reload();
+  })
+  .catch(err => console.error(err));
+}
