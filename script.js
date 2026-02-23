@@ -8,6 +8,9 @@ fetch("https://autos-backendss.onrender.com/autos")
     data.forEach(auto => {
       const autoHTML = `
         <div class="auto">
+
+          <img src="${auto.imagen}" alt="${auto.marca}" class="auto-img">
+
           <h2>${auto.marca} ${auto.modelo}</h2>
           <p>Año: ${auto.año}</p>
           <p>Precio: $${auto.precio}</p>
@@ -23,8 +26,7 @@ fetch("https://autos-backendss.onrender.com/autos")
   .catch(error => console.error("Error:", error));
 
 
-// 🔹 FUNCIONES FUERA DEL forEach 🔹
-
+// 🔹 EDITAR
 function editarAuto(id) {
   const nuevoPrecio = prompt("Ingrese nuevo precio:");
 
@@ -48,6 +50,7 @@ function editarAuto(id) {
 }
 
 
+// 🔹 ELIMINAR
 function eliminarAuto(id) {
   fetch(`https://autos-backendss.onrender.com/autos/${id}`, {
     method: "DELETE"
